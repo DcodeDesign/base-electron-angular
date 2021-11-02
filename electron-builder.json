@@ -1,4 +1,5 @@
 {
+  "appId": "com.beoogo-console.app",
   "asar": false,
   "directories": {
     "output": "release/"
@@ -7,11 +8,7 @@
     {
       "provider": "github",
       "repo": "base-electron-angular",
-      "host": "github.com",
-      "protocol": "https",
-      "releaseType": "draft",
-      "owner": "DcodeDesign",
-      "private": false
+      "owner": "DcodeDesign"
     }
   ],
   "files": [

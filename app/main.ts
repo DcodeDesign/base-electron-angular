@@ -42,12 +42,11 @@ function createWindow(): BrowserWindow {
     let pathIndex = './index.html';
 
     if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
-      // Path when running electron in local folder
       pathIndex = '../dist/index.html';
     }
 
     mainWindow.once('ready-to-show', () => {
-      autoUpdater.checkForUpdatesAndNotify().then(r => console.log('checkForUpdatesAndNotify', r));
+      autoUpdater.checkForUpdatesAndNotify();
     });
 
     mainWindow.loadURL(url.format({
@@ -72,6 +71,7 @@ try {
   app.on('ready', () => setTimeout(createWindow, 400));
 
   app.on('window-all-closed', () => {
+    console.log(process.platform)
     if (process.platform !== 'darwin') {
       app.quit();
     }
@@ -84,12 +84,10 @@ try {
   });
 
   ipcMain.on('app_version', (event) => {
-    console.log('app_version');
     event.sender.send('app_version', { version: app.getVersion() });
   });
 
   autoUpdater.on('update-available', () => {
-    console.log('update-available');
     mainWindow.webContents.send('update_available');
   });
 
@@ -98,13 +96,9 @@ try {
   });
 
   ipcMain.on('restart_app', () => {
-    console.log('restart_app');
     autoUpdater.quitAndInstall();
   });
 
-  console.log('Start App');
-
 } catch (e) {
-  console.log(e);
   throw e;
 }
