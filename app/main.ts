@@ -30,14 +30,15 @@ function createWindow(): BrowserWindow {
 
   if (serve) {
     mainWindow.webContents.openDevTools();
+
     require('electron-reload')(__dirname, {
       electron: require(path.join(__dirname, '/../node_modules/electron'))
     });
+
     mainWindow.loadURL('http://localhost:4200');
   } else {
     mainWindow.webContents.openDevTools();
 
-    // Path when running electron executable
     let pathIndex = './index.html';
 
     if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
@@ -46,7 +47,7 @@ function createWindow(): BrowserWindow {
     }
 
     mainWindow.once('ready-to-show', () => {
-      autoUpdater.checkForUpdatesAndNotify().then(r => console.log('checkForUpdatesAndNotify'));
+      autoUpdater.checkForUpdatesAndNotify().then(r => console.log('checkForUpdatesAndNotify', r));
     });
 
     mainWindow.loadURL(url.format({
@@ -100,6 +101,8 @@ try {
     console.log('restart_app');
     autoUpdater.quitAndInstall();
   });
+
+  console.log('Start App');
 
 } catch (e) {
   console.log(e);

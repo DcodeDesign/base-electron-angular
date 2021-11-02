@@ -6,9 +6,13 @@
   "publish": [
     {
       "provider": "github",
-      "url": "https://github.com/DcodeDesign/base-electron-angular",
+      "repo": "base-electron-angular",
+      "host": "github.com",
+      "protocol": "https",
+      "releaseType": "draft",
       "owner": "DcodeDesign",
-      "token": "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"
+      "token": "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",
+      "private": false
     }
   ],
   "files": [
@@ -30,6 +34,9 @@
 
   "win": {
     "icon": "dist/assets/icons",
+    "publish": [
+      "github"
+    ],
     "target": [
       "nsis"
     ]
