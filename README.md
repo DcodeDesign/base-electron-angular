@@ -9,4 +9,4 @@
 |`npm run electron:build`| Builds your application and creates an app consumable based on your operating system |
 
 
-`[Environment]::SetEnvironmentVariable("GH_TOKEN","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","DcodeDesign") `
+`[Environment]::SetEnvironmentVariable("GH_TOKEN","TOKEN","User") `
