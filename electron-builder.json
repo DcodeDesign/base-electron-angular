@@ -7,7 +7,8 @@
     {
       "provider": "github",
       "url": "https://github.com/DcodeDesign/base-electron-angular",
-      "token": "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"
+      "owner": "DcodeDesign",
+      "token": "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"
     }
   ],
   "files": [

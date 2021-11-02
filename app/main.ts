@@ -35,6 +35,8 @@ function createWindow(): BrowserWindow {
     });
     mainWindow.loadURL('http://localhost:4200');
   } else {
+    mainWindow.webContents.openDevTools();
+
     // Path when running electron executable
     let pathIndex = './index.html';
 
