@@ -3,6 +3,13 @@
   "directories": {
     "output": "release/"
   },
+  "publish": [
+    {
+      "provider": "github",
+      "url": "https://github.com/DcodeDesign/base-electron-angular",
+      "token": "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"
+    }
+  ],
   "files": [
     "**/*",
     "!**/*.ts",
@@ -44,6 +51,6 @@
       "AppImage"
     ]
   },
-  "afterPack": "./electron-app/after-builder.js"
+  "afterPack": "./app/after-builder.js"
 }
 

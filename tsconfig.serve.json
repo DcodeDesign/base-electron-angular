@@ -17,7 +17,9 @@
     ]
   },
   "files": [
-    "app/main.ts"
+    "app/main.ts",
+    "app/utils.ts",
+    "app/after-builder.ts",
   ],
   "exclude": [
     "node_modules",
